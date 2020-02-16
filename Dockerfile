@@ -7,7 +7,7 @@ FROM kalilinux/kali-rolling
 RUN apt -y update && apt -y upgrade && apt -y autoremove && apt clean
 
 # Tools
-RUN apt install aircrack-ng crackmapexec crunch curl dirb dirbuster dnsenum dnsrecon dnsutils dos2unix enum4linux exploitdb ftp git gobuster hashcat hping3 hydra impacket-scripts john joomscan masscan metasploit-framework mimikatz nasm ncat netcat-traditional nikto nmap patator php powersploit proxychains python-impacket python-pip python2 python3 recon-ng responder samba samdump2 smbclient smbmap snmp socat sqlmap sslscan sslstrip theharvester vim wafw00f weevely wfuzz whois wordlists wpscan ruby-dev gcc libffi-dev make -y --no-install-recommends
+RUN apt install aircrack-ng cme crunch curl dirb dirbuster dnsenum dnsrecon dnsutils dos2unix enum4linux exploitdb ftp git gobuster hashcat hping3 hydra impacket-scripts john joomscan masscan metasploit-framework mimikatz nasm ncat netcat-traditional nikto nmap patator php powersploit proxychains python-impacket python-pip python2 python3 recon-ng responder samba samdump2 smbclient smbmap snmp socat sqlmap sslscan sslstrip theharvester vim wafw00f weevely wfuzz whois wordlists wpscan ruby-dev gcc libffi-dev make -y --no-install-recommends
 RUN gem install winrm winrm-fs colorize stringio
 RUN gem install evil-winrm
 

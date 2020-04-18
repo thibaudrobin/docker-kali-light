@@ -64,7 +64,6 @@ impacket-scripts
 john
 joomscan
 lsassy
-make
 masscan
 metasploit-framework
 mimikatz

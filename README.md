@@ -95,3 +95,7 @@ wpscan
 ```
 
 You can easily modify the Dockerfile to add more tools. Enjoy :)
+
+## Other project
+
+If you want something much heavier and more complete, feel free to use Exegol from my friend Shutdown: https://github.com/ShutdownRepo/Exegol.

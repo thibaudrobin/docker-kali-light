@@ -1,4 +1,4 @@
-version: '3'
+version: '3.4'
 
 services:
   kali-light:
@@ -6,3 +6,5 @@ services:
     volumes:
       - /mnt/share-kali-light:/share
       - /mnt/share-kali-light/.bash_history:/root/.bash_history
+      - /mnt/share-kali-light/.zsh_history:/root/.zsh_history
+    network_mode: host

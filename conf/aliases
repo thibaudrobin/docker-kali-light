@@ -1,0 +1,48 @@
+alias l='ls -al'
+alias ipa='ip --brief --color a'
+alias cme='crackmapexec'
+alias http-server='python3 -m http.server 8888'
+alias http-server-80='sudo python3 -m http.server 80'
+alias php-server='php -S 127.0.0.1:8888 -t .'
+alias ftp-server='python -m pyftpdlib -u "admin" -P "2d4f#5!g6h7" -p 2121'
+alias smb-server='sudo python2 ~/tools/impacket/examples/smbserver.py SHARE .'
+alias dd='dd status=progress '
+alias ipa='ip --brief --color a'
+alias pc='proxychains -q'
+
+alias nse='ls /usr/share/nmap/scripts | grep '
+alias nmap-range='nmap -T5 -n -sn -oN /tmp/nmap-range.txt'
+alias nmap-fast-tcp='nmap -F -T5 --version-light --top-ports 300 -oN /tmp/nmap-fast-tcp.txt'
+alias nmap-fast-udp='sudo nmap -sUV -T4 -F --version-intensity 0 -oN /tmp/nmap-fast-udp.txt'
+alias nmap-full-tcp='sudo nmap -Pn -sS -T4 -A -p1-65535 -v --script vulners -oN /tmp/nmap-full-tcp.txt'
+alias nmap-full-udp='sudo nmap -Pn -sS -sU -T4 -A -v -PE -PS22,25,80 -PA21,23,80,443,3389 --script vulners -oN /tmp/nmap-full-udp.txt'
+alias nmap-smb="nmap -p 139,445 -vv --script=$(ls /usr/share/nmap/scripts | grep smb-vuln | tr '\n' ',')"
+
+alias responder='python3 /opt/tools/Responder/Responder.py'
+alias responder-http-on="sed -i 's/HTTP = Off/HTTP = On/g' /opt/tools/Responder/Responder.conf && cat /opt/tools/Responder/Responder.conf | grep --color=never 'HTTP ='"
+alias responder-http-off="sed -i 's/HTTP = On/HTTP = Off/g' /opt/tools/Responder/Responder.conf && cat /opt/tools/Responder/Responder.conf | grep --color=never 'HTTP ='"
+alias responder-smb-on="sed -i 's/SMB = Off/SMB = On/g' /opt/tools/Responder/Responder.conf && cat /opt/tools/Responder/Responder.conf | grep --color=never 'SMB ='"
+alias responder-smb-off="sed -i 's/SMB = On/SMB = Off/g' /opt/tools/Responder/Responder.conf && cat /opt/tools/Responder/Responder.conf | grep --color=never 'SMB ='"
+alias ms14-068.py=/opt/tools/pykek/ms14-068.py
+alias autorecon='/opt/tools/AutoRecon/autorecon.py -o autorecon'
+alias ssrfmap='python3 /opt/tools/SSRFmap/ssrfmap.py'
+alias fuxploider='cd /opt/tools/fuxploider && echo "[*] changed dir : cd /opt/tools/fuxploider/"  && python3 fuxploider.py'
+
+alias sublist3r='python3 /opt/tools/Sublist3r/Sublist3r.py'
+alias dog='python3 /opt/tools/ReconDog/dog'
+alias cloudfail='python3 /opt/tools/CloudFail/cloudfail.py'
+alias oneforall='python3 /opt/tools/OneForAll/oneforall/oneforall.py'
+alias eyewitness='python3 /opt/tools/EyeWitness/EyeWitness.py'
+alias XSStrike='python3 /opt/tools/XSStrike/xsstrike.py'
+alias bolt='python3 /opt/tools/Bolt/bolt.py'
+alias ntlmrelayx='grc ntlmrelayx.py'
+alias secretsdump='grc secretsdump.py'
+alias bloodhound.py='/opt/tools/BloodHound.py/bloodhound.py'
+#alias mitm6='python3 /opt/tools/mitm6/mitm6/mitm6.py'
+alias dementor.py='python /opt/tools/dementor/dementor.py'
+alias dementor='grc dementor.py'
+alias ntlm-scanner.py='grc python /opt/tools/ntlm-scanner/scan.py'
+alias proxychains='proxychains '
+alias grc='grc '
+alias darkarmour='cd /opt/tools/darkarmour/ && echo "[*] changed dir : cd /opt/tools/darkarmour/" && python3 darkarmour.py'
+alias fzf-wordlists='find /usr/share/seclists /usr/share/wordlists /usr/share/dirbuster /usr/share/wfuzz /usr/share/dirb /usr/share/brutex -type f | fzf'

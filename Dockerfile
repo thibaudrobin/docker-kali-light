@@ -3,24 +3,29 @@
 # Official base image
 FROM kalilinux/kali-rolling
 
-# Apt
-RUN apt -y update --fix-missing && apt -y upgrade && apt -y autoremove && apt clean
-
-# Tools
-RUN apt install aircrack-ng crackmapexec crunch curl dirb dirbuster dnsenum dnsrecon dnsutils dos2unix enum4linux exploitdb ftp git gobuster hashcat hping3 hydra impacket-scripts john joomscan masscan metasploit-framework mimikatz nasm ncat netcat-traditional nikto nmap patator php powersploit proxychains python-impacket python-pip python3-pip python2 python3 recon-ng responder samba samdump2 smbclient smbmap snmp socat sqlmap sslscan theharvester vim wafw00f weevely wfuzz whois wordlists wpscan ruby-dev gcc libffi-dev make -y --no-install-recommends
-RUN gem install winrm winrm-fs colorize stringio
-RUN gem install evil-winrm
-
-# Alias
-RUN echo "alias l='ls -al'" >> /root/.bashrc
-RUN echo "alias nse='ls /usr/share/nmap/scripts | grep '" >> /root/.bashrc
-RUN echo "alias scan-range='nmap -T5 -n -sn'" >> /root/.bashrc
-RUN echo "alias http-server='python3 -m http.server 8080'" >> /root/.bashrc
-RUN echo "alias php-server='php -S 127.0.0.1:8080 -t .'" >> /root/.bashrc
-RUN echo "alias ftp-server='python -m pyftpdlib -u \"admin\" -P \"S3cur3d_Ftp_3rv3r\" -p 2121'" >> /root/.bashrc
-
 # Set working directory to /root
 WORKDIR /root
 
+# Apt
+RUN apt -y update --fix-missing && apt -y upgrade && apt -y autoremove && apt clean
+
+# Basic tools
+RUN apt install apt-utils aircrack-ng crackmapexec crunch curl dirb dirbuster dnsenum dnsrecon dnsutils dos2unix enum4linux exploitdb ftp gcc git gobuster hashcat hping3 hydra impacket-scripts john joomscan libffi-dev make masscan metasploit-framework mimikatz nasm ncat netcat-traditional nikto nmap patator php powersploit proxychains python2 python3 python3-pip python3-setuptools python3-impacket python-setuptools python-dev recon-ng responder ruby-dev samba samdump2 smbclient smbmap snmp socat sqlmap sslscan theharvester vim wafw00f weevely wfuzz whois wordlists seclists wpscan zsh ssh-audit iputils-ping tcpdump proxychains whatweb smtp-user-enum onesixtyone cewl nbtscan amap golang testssl.sh bsdmainutils powershell -y --no-install-recommends
+
+# Advanced tools
+ADD ./install.sh /root/install.sh
+RUN chmod +x /root/install.sh && /root/install.sh && rm /root/install.sh
+
+# History (keep old history)
+ADD ./conf/history /root/history
+RUN cat /root/history >> /root/.zsh_history
+RUN h=$(cat /root/.zsh_history | sort | uniq)
+RUN echo $h > /root/.zsh_history
+RUN rm /root/history
+
+# Aliases
+ADD ./conf/aliases /opt/aliases
+RUN echo 'source /opt/aliases' >> /root/.zshrc
+
 # Open shell
-CMD ["/bin/bash"]
+CMD ["/bin/zsh"]

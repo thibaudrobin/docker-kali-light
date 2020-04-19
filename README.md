@@ -74,6 +74,7 @@ nikto
 nmap
 onesixtyone
 patator
+passing-the-hash
 powershell
 powersploit
 pykek

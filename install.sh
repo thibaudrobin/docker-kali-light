@@ -1,5 +1,5 @@
 #!/bin/bash
-# Author: Charlie BROMBERG (Shutdown - @_nwodtuhs) : https://github.com/ShutdownRepo/Exegol
+# Very strongly inspired by https://github.com/ShutdownRepo/Exegol project.
 
 if [[ $EUID -ne 0 ]]; then
 echo "You must be a root user" 2>&1

@@ -17,6 +17,7 @@ rm get-pip.py
 pip install wheel
 pip3 install wheel
 
+# Oh-my-zsh
 echo "[+] Installing oh-my-zsh and config"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sed -i 's/robbyrussell/gentoo/g' ~/.zshrc
@@ -50,6 +51,12 @@ pip3 install -r requirements.txt
 # Web fuzzer
 echo "[+] Installing ffuf"
 go get -v -u github.com/ffuf/ffuf
+
+# Impacket scripts
+echo "[+] Installing Impacket scripts"
+git -C /opt/tools/ clone https://github.com/SecureAuthCorp/impacket
+cd /opt/tools/impacket/
+pip3 install .
 
 # Active directory tool
 echo "[+] Installing lsassy with pip, and cme module by reinstalling cme with lsassy in cmd/modules/"

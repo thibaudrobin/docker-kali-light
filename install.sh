@@ -87,3 +87,9 @@ echo "[+] Installing shellerator"
 git -C /opt/tools clone https://github.com/ShutdownRepo/shellerator
 cd /opt/tools/shellerator
 pip3 install -r requirements.txt
+
+# Awesome webshell generator/handler
+echo "[+] Installing weevely"
+git -C /opt/tools clone https://github.com/epinna/weevely3.git
+cd /opt/tools/weevely3
+pip3 install -r requirements.txt --upgrade

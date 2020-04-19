@@ -16,12 +16,8 @@ RUN apt install aircrack-ng amap apt-utils bsdmainutils cewl crackmapexec crunch
 ADD ./install.sh /root/install.sh
 RUN chmod +x /root/install.sh && /root/install.sh && rm /root/install.sh
 
-# History (keep old history)
-ADD ./conf/history /root/history
-RUN cat /root/history >> /root/.zsh_history
-RUN h=$(cat /root/.zsh_history | sort | uniq)
-RUN echo $h > /root/.zsh_history
-RUN rm /root/history
+# History
+ADD ./conf/history /root/.zsh_history
 
 # Aliases
 ADD ./conf/aliases /opt/aliases

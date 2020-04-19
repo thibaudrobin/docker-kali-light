@@ -81,3 +81,9 @@ echo "[+] Installing darkarmour"
 git -C /opt/tools/ clone https://github.com/bats3c/darkarmour
 cd /opt/tools/darkarmour
 apt -y install mingw-w64-tools mingw-w64-common g++-mingw-w64 gcc-mingw-w64 upx-ucl osslsigncode
+
+# Reverse shell generator
+echo "[+] Installing shellerator"
+git -C /opt/tools clone https://github.com/ShutdownRepo/shellerator
+cd /opt/tools/shellerator
+pip3 install -r requirements.txt

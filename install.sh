@@ -52,6 +52,12 @@ pip3 install -r requirements.txt
 echo "[+] Installing ffuf"
 go get -v -u github.com/ffuf/ffuf
 
+# Nosqlmap
+echo "[+] Installing nosqlmap"
+git -C /opt/tools clone https://github.com/codingo/NoSQLMap.git
+cd /opt/tools/NoSQLMap
+python setup.py install
+
 # Impacket scripts
 echo "[+] Installing Impacket scripts"
 git -C /opt/tools/ clone https://github.com/SecureAuthCorp/impacket

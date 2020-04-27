@@ -72,6 +72,7 @@ ncat
 netcat-traditional
 nikto
 nmap
+nosqlmap
 onesixtyone
 patator
 passing-the-hash

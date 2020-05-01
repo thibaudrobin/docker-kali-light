@@ -28,7 +28,6 @@ Create containers
 
 ```
 pip install docker-compose --user
-sudo mkdir /mnt/share-kali-light
 docker-compose run kali-light
 ```
 

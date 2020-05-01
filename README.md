@@ -74,8 +74,9 @@ nikto
 nmap
 nosqlmap
 onesixtyone
-patator
+oscanner
 passing-the-hash
+patator
 powershell
 powersploit
 pykek
@@ -84,6 +85,7 @@ recon-ng
 responder
 samdump2
 seclists
+sipvicious
 smbclient
 smbmap
 smtp-user-enum
@@ -96,9 +98,11 @@ ssrfmap
 tcpdump
 testssl.sh
 theharvester
+tnscmd10g
 wafw00f
 weevely
 wfuzz
+whatweb
 whatweb
 wordlists
 wpscan

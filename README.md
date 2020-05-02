@@ -11,6 +11,13 @@ git clone https://github.com/thibaudrobin/docker-kali-light.git
 cd docker-kali-light
 ```
 
+Create share and zsh history
+
+```
+sudo mkdir /mnt/share-kali-light
+sudo cp conf/history /mnt/share-kali-light/.zsh_history
+```
+
 Build the image
 
 ```bash
@@ -21,7 +28,6 @@ Create containers
 
 ```
 pip install docker-compose --user
-sudo mkdir /mnt/share-kali-light
 docker-compose run kali-light
 ```
 

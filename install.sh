@@ -22,7 +22,7 @@ echo "[+] Installing oh-my-zsh and config"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo 'PROMPT="%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)toolbox %{$fg_bold[blue]%}%(!.%1~.%~) $(git_prompt_info)$(prompt_char)%{$reset_color%} "' >> ~/.zshrc
 sed -i 's/robbyrussell/gentoo/g' ~/.zshrc
-echo 'export GOPATH=/root/go/bin' >> ~/.zshrc
+echo 'export GOPATH=/opt/tools/go/bin' >> ~/.zshrc
 echo 'export GO111MODULE=on' >> ~/.zshrc
 echo 'export PATH=$GOPATH:$PATH' >> ~/.zshrc
 echo 'export PATH=/opt/tools/bin:$PATH' >> ~/.zshrc
@@ -52,6 +52,7 @@ pip3 install -r requirements.txt
 # Web fuzzer
 echo "[+] Installing ffuf"
 go get -v -u github.com/ffuf/ffuf
+mv /root/go /opt/tools
 
 # Nosqlmap
 echo "[+] Installing nosqlmap"

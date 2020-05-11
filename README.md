@@ -39,7 +39,7 @@ echo "alias kali='docker-compose -f $HOME/docker-kali-light/docker-compose.yml r
 
 More infos : https://thibaud-robin.fr/articles/docker-kali/
 
-## Tools installed
+## Offensive tools installed
 
 ```md
 aircrack-ng
@@ -60,7 +60,6 @@ dos2unix
 enum4linux
 exploitdb
 ffuf
-ftp
 fuxploider
 gobuster
 hashcat

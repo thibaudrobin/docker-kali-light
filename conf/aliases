@@ -24,7 +24,7 @@ alias responder-http-off="sed -i 's/HTTP = On/HTTP = Off/g' /opt/tools/Responder
 alias responder-smb-on="sed -i 's/SMB = Off/SMB = On/g' /opt/tools/Responder/Responder.conf && cat /opt/tools/Responder/Responder.conf | grep --color=never 'SMB ='"
 alias responder-smb-off="sed -i 's/SMB = On/SMB = Off/g' /opt/tools/Responder/Responder.conf && cat /opt/tools/Responder/Responder.conf | grep --color=never 'SMB ='"
 alias ms14-068.py=/opt/tools/pykek/ms14-068.py
-alias autorecon='/opt/tools/AutoRecon/autorecon.py -o autorecon'
+alias autorecon='/opt/tools/AutoRecon/src/autorecon/autorecon.py -o autorecon'
 alias ssrfmap='python3 /opt/tools/SSRFmap/ssrfmap.py'
 alias fuxploider='cd /opt/tools/fuxploider && echo "[*] changed dir : cd /opt/tools/fuxploider/"  && python3 fuxploider.py'
 alias weevely='python3 /opt/tools/weevely3/weevely.py'
